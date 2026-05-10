@@ -2,6 +2,7 @@
   "name": "codex-deepseek-proxy",
   "version": "0.1.3",
   "private": true,
+  "license": "GPL-3.0-only",
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
