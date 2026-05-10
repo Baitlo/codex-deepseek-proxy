@@ -236,3 +236,7 @@ THINKING=disabled
 - 本工具不是 DeepSeek、OpenAI 或 Codex 官方项目。
 - 请自行保管 API Key，不要将 `.env` 提交到公开仓库。
 - DeepSeek、Codex、Responses API 的协议细节可能变化，如果后续出现解析报错，需要根据实际返回继续适配。
+
+## License 提醒
+
+当前仓库尚未添加 `LICENSE` 文件。若后续希望公开发布、允许他人复用或分发，建议尽快补充明确许可证，例如 MIT、Apache-2.0 或 GPL 系列；在未声明许可证前，默认并不等于开源授权。
