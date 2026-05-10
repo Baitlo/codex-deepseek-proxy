@@ -1,0 +1,17 @@
+{
+  "name": "codex-deepseek-proxy-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "dev": "npm exec tauri dev",
+    "build": "npm exec tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "latest"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "latest"
+  }
+}
