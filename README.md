@@ -6,6 +6,32 @@
 
 > 适合场景：你不想使用功能较重的桌面代理工具，只想在本机启动一个小服务，让 Codex app 访问 `http://127.0.0.1:3456/v1/responses`，然后由本工具转发到 DeepSeek 官方 `/chat/completions`。
 
+## 桌面版
+
+仓库已新增 `desktop/` 目录，提供一个 Tauri/Rust 桌面应用原型：
+
+- 输入 DeepSeek API Key。
+- 选择 `deepseek-v4-pro` 或 `deepseek-v4-flash`。
+- 启动/停止内置本地代理。
+- 一键备份并编辑 `~/.codex/config.toml`。
+- 提供 DMG 构建 workflow：`.github/workflows/build-desktop.yml`。
+
+本地构建：
+
+```bash
+cd desktop
+npm install
+npm run build
+```
+
+构建产物通常位于：
+
+```bash
+desktop/src-tauri/target/release/bundle/dmg/
+```
+
+说明：当前桌面版是最小可运行原型，代理启动、模型选择、Codex 配置写入已经实现；开机启动按钮目前保留为占位提示，后续可继续接入 macOS Login Item 或 LaunchAgent。
+
 ## 功能特性
 
 - 提供本地 OpenAI Responses 兼容端点：`POST /v1/responses`
@@ -29,7 +55,7 @@ http://127.0.0.1:3456/v1/responses
 DeepSeek 官方 API /chat/completions
 ```
 
-## 安装
+## 安装 CLI 版
 
 要求 Node.js 18 或更高版本。
 
@@ -80,7 +106,7 @@ DEBUG=0
 - 不要在 `DEEPSEEK_API_KEY=...` 同一行后面追加中文注释或其他非 ASCII 字符。
 - `.env` 已被 `.gitignore` 忽略。
 
-## 启动
+## 启动 CLI 版
 
 ```bash
 npm start
@@ -151,7 +177,7 @@ model = "deepseek-v4-flash"
 model = "deepseek-v4-pro"
 ```
 
-## 后台运行
+## 后台运行 CLI 版
 
 推荐使用 `pm2`：
 
@@ -237,6 +263,6 @@ THINKING=disabled
 - 请自行保管 API Key，不要将 `.env` 提交到公开仓库。
 - DeepSeek、Codex、Responses API 的协议细节可能变化，如果后续出现解析报错，需要根据实际返回继续适配。
 
-## License 提醒
+## License
 
-当前仓库尚未添加 `LICENSE` 文件。若后续希望公开发布、允许他人复用或分发，建议尽快补充明确许可证，例如 MIT、Apache-2.0 或 GPL 系列；在未声明许可证前，默认并不等于开源授权。
+本项目使用 **GNU General Public License v3.0**。详见 [LICENSE](./LICENSE)。
