@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex DeepSeek Proxy</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card hero">
+        <div>
+          <h1>Codex DeepSeek Proxy</h1>
+          <p>让 Codex app 通过本地 OpenAI Responses 代理调用 DeepSeek 官方 API。</p>
+        </div>
+        <span id="statusBadge" class="badge">未启动</span>
+      </section>
+
+      <section class="card grid">
+        <label>
+          <span>DeepSeek API Key</span>
+          <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+        </label>
+        <label>
+          <span>模型</span>
+          <select id="model">
+            <option value="deepseek-v4-pro">deepseek-v4-pro</option>
+            <option value="deepseek-v4-flash">deepseek-v4-flash</option>
+          </select>
+        </label>
+        <label>
+          <span>本地端口</span>
+          <input id="port" type="number" min="1024" max="65535" value="3456" />
+        </label>
+        <label>
+          <span>Thinking</span>
+          <select id="thinking">
+            <option value="enabled">enabled</option>
+            <option value="disabled">disabled</option>
+          </select>
+        </label>
+        <label>
+          <span>Reasoning effort</span>
+          <select id="effort">
+            <option value="high">high</option>
+            <option value="max">max</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="card actions">
+        <button id="saveBtn">保存设置</button>
+        <button id="startBtn">启动代理</button>
+        <button id="stopBtn" class="secondary">停止代理</button>
+        <button id="testBtn" class="secondary">测试连接</button>
+      </section>
+
+      <section class="card actions">
+        <button id="codexBtn">一键配置 Codex</button>
+        <button id="launchBtn" class="secondary">设置开机启动</button>
+        <button id="restoreBtn" class="danger">恢复上一次 Codex 备份</button>
+      </section>
+
+      <section class="card">
+        <h2>状态</h2>
+        <pre id="log">等待操作...</pre>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
