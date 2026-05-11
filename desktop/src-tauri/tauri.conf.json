@@ -1,0 +1,26 @@
+{
+  "productName": "Codex DeepSeek Proxy",
+  "version": "0.1.0",
+  "identifier": "com.baitlo.codex-deepseek-proxy",
+  "build": {
+    "frontendDist": "..",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Codex DeepSeek Proxy",
+        "width": 920,
+        "height": 760,
+        "resizable": true
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg"],
+    "category": "DeveloperTool"
+  }
+}
